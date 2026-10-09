@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * @package Maho_SizeChart
+ */
+-->
+<layout>
+    <adminhtml_sizechart_chart_index>
+        <reference name="content">
+            <block type="sizechart/adminhtml_chart" name="sizechart_chart" />
+        </reference>
+    </adminhtml_sizechart_chart_index>
+
+    <adminhtml_sizechart_chart_new>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="sizechart/adminhtml_chart_edit" name="sizechart_chart_edit" />
+        </reference>
+    </adminhtml_sizechart_chart_new>
+
+    <adminhtml_sizechart_chart_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="sizechart/adminhtml_chart_edit" name="sizechart_chart_edit" />
+        </reference>
+    </adminhtml_sizechart_chart_edit>
+
+    <adminhtml_sizechart_chart_grid>
+        <block type="sizechart/adminhtml_chart_grid" name="root" output="toHtml" />
+    </adminhtml_sizechart_chart_grid>
+</layout>

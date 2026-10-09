@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * @package Maho_SizeChart
+ */
+-->
+<layout>
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addCss"><stylesheet>maho/sizechart/sizechart.css</stylesheet></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>maho/sizechart/sizechart.js</name>
+            </action>
+        </reference>
+        <reference name="alert.urls">
+            <block type="sizechart/product_view" name="sizechart.product.view" as="sizechart" template="maho/sizechart/link.phtml" />
+        </reference>
+        <reference name="before_body_end">
+            <block type="sizechart/product_view" name="sizechart.product.modal" template="maho/sizechart/modal.phtml" />
+        </reference>
+    </catalog_product_view>
+</layout>

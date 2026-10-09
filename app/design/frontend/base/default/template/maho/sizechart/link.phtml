@@ -1,0 +1,19 @@
+<?php
+/**
+ * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * @package Maho_SizeChart
+ * @var Maho_SizeChart_Block_Product_View $this
+ */
+?>
+<?php if ($this->canShow()): ?>
+<p class="sizechart-link-wrap">
+    <a href="#sizechart-modal"
+       class="sizechart-link"
+       data-sizechart-open
+       aria-haspopup="dialog"
+       aria-controls="sizechart-modal">
+        <?php echo $this->escapeHtml($this->getLinkLabel()) ?>
+    </a>
+</p>
+<?php endif; ?>

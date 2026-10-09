@@ -1,0 +1,34 @@
+<?php
+/**
+ * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * @package Maho_SizeChart
+ * @var Maho_SizeChart_Block_Product_View $this
+ */
+?>
+<?php if ($this->canShow()): ?>
+<div id="sizechart-modal"
+     class="sizechart-modal"
+     hidden
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="sizechart-modal-title">
+    <div class="sizechart-modal__backdrop" data-sizechart-close></div>
+    <div class="sizechart-modal__dialog">
+        <header class="sizechart-modal__header">
+            <h2 id="sizechart-modal-title" class="sizechart-modal__title">
+                <?php echo $this->escapeHtml($this->getModalTitle()) ?>
+            </h2>
+            <button type="button"
+                    class="sizechart-modal__close"
+                    data-sizechart-close
+                    aria-label="<?php echo $this->escapeHtml($this->__('Close')) ?>">
+                &times;
+            </button>
+        </header>
+        <div class="sizechart-modal__body std">
+            <?php echo $this->getChartHtml() ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * @package Maho_SizeChart
+ */
+-->
+<config>
+    <modules>
+        <Maho_SizeChart>
+            <version>1.0.0</version>
+        </Maho_SizeChart>
+    </modules>
+
+    <global>
+        <models>
+            <sizechart>
+                <class>Maho_SizeChart_Model</class>
+                <resourceModel>sizechart_resource</resourceModel>
+            </sizechart>
+            <sizechart_resource>
+                <class>Maho_SizeChart_Model_Resource</class>
+                <entities>
+                    <chart>
+                        <table>sizechart_chart</table>
+                    </chart>
+                </entities>
+            </sizechart_resource>
+        </models>
+        <blocks>
+            <sizechart>
+                <class>Maho_SizeChart_Block</class>
+            </sizechart>
+        </blocks>
+        <helpers>
+            <sizechart>
+                <class>Maho_SizeChart_Helper</class>
+            </sizechart>
+        </helpers>
+        <resources>
+            <sizechart_setup>
+                <setup>
+                    <module>Maho_SizeChart</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </sizechart_setup>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Maho_SizeChart before="Mage_Adminhtml">Maho_SizeChart_Adminhtml</Maho_SizeChart>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <sizechart>
+                    <file>sizechart.xml</file>
+                </sizechart>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Maho_SizeChart>
+                    <files>
+                        <default>Maho_SizeChart.csv</default>
+                    </files>
+                </Maho_SizeChart>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <frontend>
+        <layout>
+            <updates>
+                <sizechart>
+                    <file>sizechart.xml</file>
+                </sizechart>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Maho_SizeChart>
+                    <files>
+                        <default>Maho_SizeChart.csv</default>
+                    </files>
+                </Maho_SizeChart>
+            </modules>
+        </translate>
+    </frontend>
+
+    <default>
+        <sizechart>
+            <general>
+                <enabled>1</enabled>
+                <link_label>Size Guide</link_label>
+            </general>
+        </sizechart>
+    </default>
+</config>

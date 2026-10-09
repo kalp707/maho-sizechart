@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * @package Maho_SizeChart
+ */
+-->
+<config>
+    <modules>
+        <Maho_SizeChart>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Catalog/>
+                <Mage_Adminhtml/>
+                <Mage_Cms/>
+            </depends>
+        </Maho_SizeChart>
+    </modules>
+</config>
