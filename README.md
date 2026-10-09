@@ -14,7 +14,7 @@ Manage reusable size guides in admin, assign them to products, and show a size-g
 - Admin CRUD for size charts (WYSIWYG content)
 - Product attribute `size_chart`
 - Store config: enable/disable and link label
-- Product-page modal (Esc, backdrop, focus restore)
+- Product-page modal styled with **Tailwind CSS 4 + daisyUI 5** (native `<dialog class="modal">`)
 - Declarative schema (`sql/schema.php`)
 - Maho admin routes via `#[Maho\Config\Route]`
 
@@ -33,6 +33,16 @@ Then regenerate Maho’s Composer autoload (required for local modules), migrate
 composer dump-autoload
 php maho migrate
 php maho cache:flush
+```
+
+### Frontend styles (Tailwind / daisyUI)
+
+Storefront UI uses Maho’s theme toolchain. A page bundle ships prebuilt as `css/sizechart.css`. Source is `src/sizechart.css`.
+
+Rebuild after template/CSS changes:
+
+```bash
+php maho dev:frontend:theme:build --theme base/default
 ```
 
 ## Usage

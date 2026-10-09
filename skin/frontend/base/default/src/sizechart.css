@@ -1,0 +1,41 @@
+/*
+ * Size Chart for the maho theme — Tailwind CSS 4 + daisyUI 5.
+ * Compile with: ./maho dev:frontend:theme:build
+ * Output: ../css/sizechart.css
+ *
+ * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+@reference "./_theme.css";
+
+/* Ensure daisyUI modal parts used by Size Chart templates are present in this bundle */
+@source inline("modal modal-box modal-action modal-backdrop modal-middle");
+@source inline("btn btn-sm btn-circle btn-ghost");
+@source inline("link link-primary link-hover");
+@source inline("prose max-w-none max-w-3xl text-lg font-bold");
+@source inline("my-2 mb-4 flex items-start justify-between gap-3");
+@source "../../../../../../app/design/frontend/**/maho/sizechart/**/*.phtml";
+
+@layer components {
+    .sizechart-modal-box {
+        @apply w-11/12;
+    }
+
+    .sizechart-modal-content {
+        @apply overflow-x-auto;
+
+        table {
+            @apply table table-zebra w-full;
+        }
+
+        th,
+        td {
+            @apply text-left;
+        }
+
+        img {
+            @apply mx-auto max-w-full rounded-box;
+        }
+    }
+}

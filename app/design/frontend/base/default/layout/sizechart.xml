@@ -9,7 +9,7 @@
 <layout>
     <catalog_product_view>
         <reference name="head">
-            <action method="addCss"><stylesheet>maho/sizechart/sizechart.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/sizechart.css</stylesheet></action>
             <action method="addItem">
                 <type>skin_js</type>
                 <name>maho/sizechart/sizechart.js</name>
