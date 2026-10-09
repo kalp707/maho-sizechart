@@ -1,55 +1,76 @@
-(function () {
+/**
+ * Maho Size Chart — vanilla JS modal
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+(() => {
     'use strict';
 
-    function ready(fn) {
-        if (document.readyState !== 'loading') {
-            fn();
+    const SELECTOR_OPEN = '[data-sizechart-open]';
+    const SELECTOR_CLOSE = '[data-sizechart-close]';
+    const MODAL_ID = 'sizechart-modal';
+    const BODY_OPEN_CLASS = 'sizechart-modal-open';
+
+    const onReady = (callback) => {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', callback, { once: true });
             return;
         }
-        document.addEventListener('DOMContentLoaded', fn);
-    }
+        callback();
+    };
 
-    ready(function () {
-        var modal = document.getElementById('sizechart-modal');
+    onReady(() => {
+        const modal = document.getElementById(MODAL_ID);
         if (!modal) {
             return;
         }
 
-        var openers = document.querySelectorAll('[data-sizechart-open]');
-        var closers = modal.querySelectorAll('[data-sizechart-close]');
-        var previouslyFocused = null;
+        let previouslyFocused = null;
 
-        function openModal(event) {
+        const openModal = (event) => {
             if (event) {
                 event.preventDefault();
             }
+
             previouslyFocused = document.activeElement;
             modal.hidden = false;
-            document.body.classList.add('sizechart-modal-open');
-            var closeBtn = modal.querySelector('.sizechart-modal__close');
+            document.body.classList.add(BODY_OPEN_CLASS);
+
+            const closeBtn = modal.querySelector('.sizechart-modal__close');
             if (closeBtn) {
                 closeBtn.focus();
             }
-        }
+        };
 
-        function closeModal() {
+        const closeModal = () => {
+            if (modal.hidden) {
+                return;
+            }
+
             modal.hidden = true;
-            document.body.classList.remove('sizechart-modal-open');
+            document.body.classList.remove(BODY_OPEN_CLASS);
+
             if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
                 previouslyFocused.focus();
             }
-        }
+            previouslyFocused = null;
+        };
 
-        Array.prototype.forEach.call(openers, function (el) {
-            el.addEventListener('click', openModal);
+        // Event delegation keeps handlers working if links are re-rendered
+        document.addEventListener('click', (event) => {
+            const openTrigger = event.target.closest(SELECTOR_OPEN);
+            if (openTrigger) {
+                openModal(event);
+                return;
+            }
+
+            const closeTrigger = event.target.closest(SELECTOR_CLOSE);
+            if (closeTrigger && modal.contains(closeTrigger)) {
+                closeModal();
+            }
         });
 
-        Array.prototype.forEach.call(closers, function (el) {
-            el.addEventListener('click', closeModal);
-        });
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && !modal.hidden) {
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
                 closeModal();
             }
         });
