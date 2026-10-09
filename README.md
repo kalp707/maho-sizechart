@@ -20,11 +20,11 @@ Manage reusable size guides in admin, assign them to products, and show a size-g
 
 ## Installation
 
-Copy `app/` and `skin/` into your Maho project root:
+Copy `app/` into the Maho project root, and `skin/` into `public/skin/` (Maho serves frontend assets from `public/`):
 
 ```bat
 xcopy /E /I /Y app C:\path\to\your-maho\app
-xcopy /E /I /Y skin C:\path\to\your-maho\skin
+xcopy /E /I /Y skin C:\path\to\your-maho\public\skin
 ```
 
 Then regenerate Maho’s Composer autoload (required for local modules), migrate, and flush cache:

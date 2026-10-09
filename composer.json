@@ -14,7 +14,7 @@
             ["app/design/adminhtml/default/default/layout/sizechart.xml", "app/design/adminhtml/default/default/layout/sizechart.xml"],
             ["app/design/frontend/base/default/layout/sizechart.xml", "app/design/frontend/base/default/layout/sizechart.xml"],
             ["app/design/frontend/base/default/template/maho/sizechart", "app/design/frontend/base/default/template/maho/sizechart"],
-            ["skin/frontend/base/default/maho/sizechart", "skin/frontend/base/default/maho/sizechart"]
+            ["skin/frontend/base/default/maho/sizechart", "public/skin/frontend/base/default/maho/sizechart"]
         ]
     }
 }
