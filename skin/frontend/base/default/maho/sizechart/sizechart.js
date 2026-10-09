@@ -1,6 +1,6 @@
 /**
  * Maho Size Chart — vanilla JS + daisyUI dialog modal
- * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-License-Identifier: OSL-3.0
  */
 (() => {
     'use strict';

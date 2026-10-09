@@ -121,4 +121,4 @@ Follows Maho core conventions:
 
 ## License
 
-[GPL-3.0-or-later](LICENSE)
+[Open Software License 3.0 (OSL-3.0)](LICENSE)

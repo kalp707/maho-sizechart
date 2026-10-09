@@ -2,7 +2,7 @@
     "name": "maho/module-sizechart",
     "description": "Size Chart module for Maho Commerce",
     "type": "magento-module",
-    "license": "GPL-3.0-or-later",
+    "license": "OSL-3.0",
     "require": {
         "php": ">=8.2",
         "mahocommerce/maho": "*"
