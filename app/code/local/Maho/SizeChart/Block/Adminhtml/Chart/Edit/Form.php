@@ -11,6 +11,16 @@ declare(strict_types=1);
 class Maho_SizeChart_Block_Adminhtml_Chart_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
     #[\Override]
+    protected function _prepareLayout()
+    {
+        parent::_prepareLayout();
+        if (Mage::getSingleton('cms/wysiwyg_config')->isEnabled()) {
+            $this->getLayout()->getBlock('head')->setCanLoadWysiwyg(true);
+        }
+        return $this;
+    }
+
+    #[\Override]
     protected function _prepareForm(): self
     {
         /** @var Maho_SizeChart_Model_Chart $model */
