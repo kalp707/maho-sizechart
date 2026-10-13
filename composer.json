@@ -1,22 +1,13 @@
 {
     "name": "maho/module-sizechart",
     "description": "Size Chart module for Maho Commerce",
-    "type": "magento-module",
+    "type": "maho-module",
     "license": "OSL-3.0",
     "require": {
         "php": ">=8.2",
-        "mahocommerce/maho": "*"
+        "mahocommerce/maho": ">=26.5"
     },
     "extra": {
-        "map": [
-            ["app/etc/modules/Maho_SizeChart.xml", "app/etc/modules/Maho_SizeChart.xml"],
-            ["app/code/local/Maho/SizeChart", "app/code/local/Maho/SizeChart"],
-            ["app/design/adminhtml/default/default/layout/sizechart.xml", "app/design/adminhtml/default/default/layout/sizechart.xml"],
-            ["app/design/frontend/base/default/layout/sizechart.xml", "app/design/frontend/base/default/layout/sizechart.xml"],
-            ["app/design/frontend/base/default/template/maho/sizechart", "app/design/frontend/base/default/template/maho/sizechart"],
-            ["skin/frontend/base/default/maho/sizechart", "public/skin/frontend/base/default/maho/sizechart"],
-            ["skin/frontend/base/default/src/sizechart.css", "public/skin/frontend/base/default/src/sizechart.css"],
-            ["skin/frontend/base/default/css/sizechart.css", "public/skin/frontend/base/default/css/sizechart.css"]
-        ]
+        "maho-module-dir": "app/code/local/Maho/SizeChart"
     }
 }

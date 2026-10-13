@@ -214,6 +214,18 @@ class Maho_SizeChart_Adminhtml_Sizechart_ChartController extends Mage_Adminhtml_
         } else {
             try {
                 $status = (int) $this->getRequest()->getParam('status');
+                $allowedStatuses = [
+                    Maho_SizeChart_Model_Chart::STATUS_ENABLED,
+                    Maho_SizeChart_Model_Chart::STATUS_DISABLED,
+                ];
+                if (!in_array($status, $allowedStatuses, true)) {
+                    Mage::getSingleton('adminhtml/session')->addError(
+                        Mage::helper('sizechart')->__('Invalid status value.'),
+                    );
+                    $this->_redirect('*/*/index');
+                    return;
+                }
+
                 $updated = 0;
                 foreach ($chartIds as $chartId) {
                     $chart = Mage::getModel('sizechart/chart')->load($chartId);

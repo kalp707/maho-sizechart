@@ -9,7 +9,7 @@ Manage reusable size guides in admin, assign them to products, and show a size-g
 
 ## Requirements
 
-- Maho Commerce (PHP 8.2+)
+- Maho Commerce `>=26.5` (PHP 8.2+)
 - Not supported on Magento 1 / OpenMage
 
 ## Features
@@ -32,7 +32,7 @@ php maho migrate
 php maho cache:flush
 ```
 
-The Maho Composer plugin deploys the module via `extra.map` (including `skin/` → `public/skin/`).
+Package type is `maho-module`. Maho loads code and templates from `vendor/`; the Composer plugin copies `skin/` to `public/skin/` automatically.
 
 ### Verify in admin
 
