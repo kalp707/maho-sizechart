@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SPDX-FileCopyrightText: 2026 Kalp SizeChart Contributors
+ * SPDX-License-Identifier: OSL-3.0
+ * @package Kalp_SizeChart
+ */
+-->
+<config>
+    <modules>
+        <Kalp_SizeChart>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Catalog/>
+                <Mage_Adminhtml/>
+                <Mage_Cms/>
+            </depends>
+        </Kalp_SizeChart>
+    </modules>
+</config>

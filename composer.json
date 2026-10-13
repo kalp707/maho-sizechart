@@ -1,5 +1,5 @@
 {
-    "name": "maho/module-sizechart",
+    "name": "kalp707/maho-sizechart",
     "description": "Size Chart module for Maho Commerce",
     "type": "maho-module",
     "license": "OSL-3.0",
@@ -8,6 +8,6 @@
         "mahocommerce/maho": ">=26.5"
     },
     "extra": {
-        "maho-module-dir": "app/code/local/Maho/SizeChart"
+        "maho-module-dir": "app/code/community/Kalp/SizeChart"
     }
 }

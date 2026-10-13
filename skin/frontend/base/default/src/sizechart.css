@@ -3,7 +3,7 @@
  * Compile with: ./maho dev:frontend:theme:build
  * Output: ../css/sizechart.css
  *
- * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-FileCopyrightText: 2026 Kalp SizeChart Contributors
  * SPDX-License-Identifier: OSL-3.0
  */
 
@@ -15,7 +15,7 @@
 @source inline("link link-primary link-hover");
 @source inline("prose max-w-none max-w-3xl text-lg font-bold");
 @source inline("my-2 mb-4 flex items-start justify-between gap-3");
-@source "../../../../../../app/design/frontend/**/maho/sizechart/**/*.phtml";
+@source "../../../../../../app/design/frontend/**/kalp/sizechart/**/*.phtml";
 
 @layer components {
     .sizechart-modal-box {

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!--
 /**
- * SPDX-FileCopyrightText: 2026 Maho SizeChart Contributors
+ * SPDX-FileCopyrightText: 2026 Kalp SizeChart Contributors
  * SPDX-License-Identifier: OSL-3.0
- * @package Maho_SizeChart
+ * @package Kalp_SizeChart
  */
 -->
 <layout>
@@ -12,14 +12,14 @@
             <action method="addCss"><stylesheet>css/sizechart.css</stylesheet></action>
             <action method="addItem">
                 <type>skin_js</type>
-                <name>maho/sizechart/sizechart.js</name>
+                <name>kalp/sizechart/sizechart.js</name>
             </action>
         </reference>
         <reference name="alert.urls">
-            <block type="sizechart/product_view" name="sizechart.product.view" as="sizechart" template="maho/sizechart/link.phtml" />
+            <block type="sizechart/product_view" name="sizechart.product.view" as="sizechart" template="kalp/sizechart/link.phtml" />
         </reference>
         <reference name="before_body_end">
-            <block type="sizechart/product_view" name="sizechart.product.modal" template="maho/sizechart/modal.phtml" />
+            <block type="sizechart/product_view" name="sizechart.product.modal" template="kalp/sizechart/modal.phtml" />
         </reference>
     </catalog_product_view>
 </layout>

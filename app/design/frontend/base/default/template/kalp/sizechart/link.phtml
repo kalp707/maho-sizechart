@@ -1,0 +1,19 @@
+<?php
+/**
+ * SPDX-FileCopyrightText: 2026 Kalp SizeChart Contributors
+ * SPDX-License-Identifier: OSL-3.0
+ * @package Kalp_SizeChart
+ * @var Kalp_SizeChart_Block_Product_View $this
+ */
+?>
+<?php if ($this->canShow()): ?>
+<p class="my-2 mb-4">
+    <a href="#sizechart-modal"
+       class="link link-primary link-hover"
+       data-sizechart-open
+       aria-haspopup="dialog"
+       aria-controls="sizechart-modal">
+        <?php echo $this->escapeHtml($this->getLinkLabel()) ?>
+    </a>
+</p>
+<?php endif; ?>

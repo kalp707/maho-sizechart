@@ -4,7 +4,7 @@ Size chart module **for [Maho Commerce](https://mahocommerce.com) only**.
 
 Manage reusable size guides in admin, assign them to products, and show a size-guide link with a modal on the product page.
 
-**Packagist / Composer name:** `maho/module-sizechart`  
+**Composer:** `kalp707/maho-sizechart`  
 **Repository:** https://github.com/kalp707/maho-sizechart
 
 ## Requirements
@@ -14,20 +14,19 @@ Manage reusable size guides in admin, assign them to products, and show a size-g
 
 ## Features
 
-- Admin CRUD for size charts (WYSIWYG content)
+- Admin CRUD for size charts (WYSIWYG content with CMS directive filtering)
 - Product attribute `size_chart`
 - Store config: enable/disable and link label
 - Product-page modal styled with **Tailwind CSS 4 + daisyUI 5** (native `<dialog class="modal">`)
 - Declarative schema (`sql/schema.php`)
 - Maho admin routes via `#[Maho\Config\Route]`
 
-## Install with Composer (recommended)
+## Install with Composer
 
 From your Maho project root (the folder that contains `composer.json`, `maho`, `app/`, and `public/`):
 
 ```bash
-composer config repositories.maho-sizechart vcs https://github.com/kalp707/maho-sizechart
-composer require maho/module-sizechart:dev-main
+composer require kalp707/maho-sizechart
 php maho migrate
 php maho cache:flush
 ```
@@ -69,16 +68,6 @@ cp -R path/to/maho-sizechart/app/. app/
 cp -R path/to/maho-sizechart/skin/. public/skin/
 ```
 
-You should end up with at least:
-
-| Path | Purpose |
-|------|---------|
-| `app/etc/modules/Maho_SizeChart.xml` | Module registration (`local` code pool) |
-| `app/code/local/Maho/SizeChart/` | Module PHP, config, schema |
-| `app/design/.../maho/sizechart/` | Templates + layout |
-| `public/skin/.../css/sizechart.css` | Built Tailwind/daisyUI CSS |
-| `public/skin/.../maho/sizechart/sizechart.js` | Frontend modal JS |
-
 ### 3. Register autoload and finish setup
 
 ```bash
@@ -86,8 +75,6 @@ composer dump-autoload
 php maho migrate
 php maho cache:flush
 ```
-
-Optional: in admin, **System → Cache Management → Flush Magento Cache**, or click **Recompile PHP Attributes** if admin routes do not appear.
 
 ## Rebuild frontend CSS (optional)
 
