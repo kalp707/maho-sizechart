@@ -48,7 +48,13 @@ class Maho_SizeChart_Block_Product_View extends Mage_Catalog_Block_Product_Abstr
     public function getChartHtml(): string
     {
         $chart = $this->getChart();
-        return $chart ? (string) $chart->getContent() : '';
+        if (!$chart) {
+            return '';
+        }
+
+        /** @var Mage_Cms_Helper_Data $helper */
+        $helper = Mage::helper('cms');
+        return $helper->getBlockTemplateProcessor()->filter((string) $chart->getContent());
     }
 
     #[\Override]
